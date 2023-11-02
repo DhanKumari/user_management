@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method ="POST" action='/register'>
+<h1>Register page</h1>
+{% for i in get_flashed_messages() %}
+{{i}}
+{% endfor %}
+<br/>
+
+{{form.hidden_tag()}}
+{{form.email.label}}{{form.email}}<br>
+{{form.username.label}}{{form.username}}<br>
+{{form.first_name.label}}{{form.first_name}}<br>
+{{form.last_name.label}}{{form.last_name}}<br>
+{{form.password.label}}{{form.password}}<br>
+{{form.submit()}}
+
+</form>
+{% endblock %}
+
